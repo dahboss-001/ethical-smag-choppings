@@ -2,6 +2,8 @@
 const C=CONFIG, $=s=>document.querySelector(s), $$=s=>document.querySelectorAll(s);
 const fmt=n=>C.currency+Math.round(n).toLocaleString('en-NG');
 const items={}; C.menu.forEach(c=>c.items.forEach(i=>items[i.id]={...i,plate:!!c.plate,drink:!!c.drinks}));
+(C.bulk||[]).forEach(b=>b.sizes.forEach(([l,p],j)=>items[b.id+':'+j]={id:b.id+':'+j,name:`${b.name} – ${l}`,price:p,img:b.img,plate:true}));
+const pic=(img,name,cls='')=>img?`<img src="images/${img}.webp" alt="${name}" loading="lazy" width="800" height="600" class="${cls}">`:`<div class="nophoto ${cls}"><span>${name}</span><em>Photo coming soon</em></div>`;
 let cart={}; try{cart=JSON.parse(localStorage.getItem('esc_cart')||'{}')}catch(e){}
 Object.keys(cart).forEach(k=>{if(!items[k])delete cart[k]});
 const save=()=>localStorage.setItem('esc_cart',JSON.stringify(cart));
@@ -38,9 +40,15 @@ $$('input[name=method]').forEach(r=>r.onchange=setAreas); setAreas();
 // Menu
 $('#catTabs').innerHTML=C.menu.map((c,i)=>`<a href="#cat${i}">${c.cat}</a>`).join('');
 $('#menuWrap').innerHTML=C.menu.map((c,i)=>`<div class="cat" id="cat${i}"><h3>${c.cat}</h3>${c.note?`<p class="muted">${c.note}</p>`:''}<div class="grid">${c.items.map(it=>`
- <article class="dish"><img src="images/${it.img}.webp" alt="${it.name}" loading="lazy" width="800" height="600"><div class="dish-body"><h4>${it.name}</h4><p>${it.desc}</p>
+ <article class="dish">${pic(it.img,it.name)}<div class="dish-body"><h4>${it.name}</h4><p>${it.desc}</p>
  <div class="dish-foot"><span class="price">${fmt(it.price)}</span><button class="add" data-id="${it.id}">+ Add</button></div></div></article>`).join('')}</div></div>`).join('');
-document.addEventListener('click',e=>{const b=e.target.closest('[data-id]');if(!b)return;const id=b.dataset.id,a=b.dataset.act;
+$('#bulkGrid').innerHTML=(C.bulk||[]).map(b=>`<article class="dish bulk"><div class="tagwrap">${pic(b.img,b.name)}<span class="ptag">From ${fmt(Math.min(...b.sizes.map(s=>s[1])))}</span></div><div class="dish-body"><h4>${b.name}</h4>
+ <select class="size" id="sz-${b.id}">${b.sizes.map(([l,p],j)=>`<option value="${j}">${l} — ${fmt(p)}</option>`).join('')}</select>
+ <div class="dish-foot"><span class="price muted" style="font-size:.85rem">Saturday delivery</span><button class="add" data-bulk="${b.id}">+ Add</button></div></div></article>`).join('');
+const evMsg="Hello ETHICAL SMAG CHOPPINGS, I'd like to book catering for an outdoor event.\nEvent type: \nDate: \nNumber of guests: \nLocation: ";
+$('#eventWa').href=wa(evMsg); $$('.eventLink').forEach(e=>e.href=wa(evMsg));
+document.addEventListener('click',e=>{const bb=e.target.closest('[data-bulk]');if(bb){const k=bb.dataset.bulk+':'+$('#sz-'+bb.dataset.bulk).value;cart[k]=(cart[k]||0)+1;save();render();toast(items[k].name+' added');return;}
+ const b=e.target.closest('[data-id]');if(!b)return;const id=b.dataset.id,a=b.dataset.act;
   if(a==='dec'){cart[id]--; if(cart[id]<=0)delete cart[id];} else if(a==='rm'){delete cart[id];} else {cart[id]=(cart[id]||0)+1; if(!a)toast(items[id].name+' added');}
   save();render();});
 
@@ -49,7 +57,7 @@ function calc(){let sub=0,plates=0;for(const k in cart){sub+=items[k].price*cart
 function totalsHTML(t){return `<div><span>Subtotal</span><span>${fmt(t.sub)}</span></div>`+(t.ok?`<div class="save"><span>Promo ${C.promoDiscountPercent}% off</span><span>−${fmt(t.disc)}</span></div><div class="save"><span>Free extra</span><span>🎁 ${C.promoExtra}</span></div>`:'')+`<div><span>Delivery</span><span class="free">Free</span></div><div class="grand"><span>Total</span><span>${fmt(t.total)}</span></div>`;}
 function render(){const keys=Object.keys(cart),t=calc(),n=keys.reduce((a,k)=>a+cart[k],0);
   $('#cartCount').textContent=n;
-  $('#cartItems').innerHTML=keys.length?keys.map(k=>`<div class="line"><img src="images/${items[k].img}.webp" alt="" loading="lazy"><div class="ln"><b>${items[k].name}</b><small>${fmt(items[k].price)} each</small></div>
+  $('#cartItems').innerHTML=keys.length?keys.map(k=>`<div class="line">${items[k].img?`<img src="images/${items[k].img}.webp" alt="" loading="lazy">`:`<div class="nophoto mini"></div>`}<div class="ln"><b>${items[k].name}</b><small>${fmt(items[k].price)} each</small></div>
    <div class="qty"><button data-id="${k}" data-act="dec" aria-label="Decrease">−</button><span>${cart[k]}</span><button data-id="${k}" data-act="inc" aria-label="Increase">+</button></div><button class="rm" data-id="${k}" data-act="rm" aria-label="Remove">🗑</button></div>`).join(''):'<p class="empty">Your cart is empty. Add some delicious dishes!</p>';
   const left=C.promoMinPlates-t.plates;
   $('#promoNudge').innerHTML=!keys.length?'':t.ok?`🎉 Promo unlocked: ${C.promoDiscountPercent}% off + ${C.promoExtra}!`:`Add ${left} more plate${left>1?'s':''} to unlock the promo (${C.promoDiscountPercent}% off + ${C.promoExtra}).`;

@@ -25,6 +25,19 @@ const CONFIG = {
   promoDiscountPercent: 10,
   promoExtra: "free drink",
 
+  // Bucket & Pot Meals (bulk). Each size is a separate price. Count as plates toward the promo.
+  bulk: [
+    { id: "b-egusi", name: "Egusi Soup", img: "b-egusi", sizes: [["Medium bucket", 18000], ["Large bucket", 28000]] },
+    { id: "b-banga", name: "Banga Soup", img: "b-banga", sizes: [["Medium bucket", 18000], ["Large bucket", 28000]] },
+    { id: "b-oha", name: "Oha Soup", img: "b-oha", sizes: [["Medium bucket", 15000], ["Large bucket", 25000]] },
+    { id: "b-ogbono", name: "Ogbono Soup", img: "b-ogbono", sizes: [["Medium bucket", 15000], ["Large bucket", 25000]] },
+    { id: "b-efo", name: "Vegetable Soup (Efo Riro)", img: "b-efo", sizes: [["Medium bucket", 15000], ["Large bucket", 25000]] },
+    { id: "b-onugbu", name: "Bitterleaf Soup (Onugbu)", img: "b-onugbu", sizes: [["Medium bucket", 15000], ["Large bucket", 25000]] },
+    { id: "b-stew", name: "Tomato Stew with Meat/Chicken", img: "b-stew", sizes: [["Medium bucket", 15000], ["Large bucket", 25000]] },
+    { id: "b-jollof", name: "Jollof Rice Cooler", img: "b-jollof", sizes: [["Small cooler", 15000], ["Medium cooler", 22000], ["Large cooler", 30000]] },
+    { id: "b-friedrice", name: "Fried Rice Bucket", img: "b-friedrice", sizes: [["Small bucket", 15000], ["Medium bucket", 22000], ["Large bucket", 30000]] }
+  ],
+
   menu: [
     { cat: "Rice Dishes", plate: true, items: [
       { id: "jollof", name: "Jollof Rice", desc: "Smoky party jollof with chicken & dodo", price: 3500, img: "jollof" },
@@ -44,7 +57,7 @@ const CONFIG = {
       { id: "edikang", name: "Edikang Ikong", desc: "Rich ugu & waterleaf vegetable soup", price: 5500, img: "edikang" },
       { id: "efo", name: "Efo Riro (Vegetable Soup)", desc: "Spinach in pepper stew with assorted meat", price: 4000, img: "efo" },
       { id: "nsala", name: "Ofe Nsala (White Soup)", desc: "Peppery white soup with catfish", price: 5500, img: "nsala" },
-      { id: "owerri", name: "Ofe Owerri", desc: "Loaded vegetable soup with snails & stockfish", price: 6000, img: "owerri" }
+      { id: "owerri", name: "Ofe Owerri", desc: "Loaded vegetable soup with snails & stockfish", price: 6000, img: null }
     ]},
     { cat: "Swallow", items: [
       { id: "eba", name: "Eba", desc: "Garri swallow (1 wrap)", price: 500, img: "eba" },
