@@ -70,7 +70,7 @@ function buildMsg(f){const t=calc(),L=[];
   L.push(`*Name:* ${f.name}`,`*Phone:* ${f.phone}`,'','*Items:*');
   for(const k in cart)L.push(`• ${cart[k]} × ${items[k].name} — ${fmt(items[k].price*cart[k])}`);
   L.push('',`Subtotal: ${fmt(t.sub)}`);
-  if(t.ok)L.push(`Promo (${t.plates} plates): ${C.promoDiscountPercent}% off −${fmt(t.disc)} + FREE ${C.promoExtra}`);
+  if(t.ok)L.push(`Promo (${t.plates} plates): ${C.promoDiscountPercent}% off −${fmt(t.disc)} + ${C.promoExtra}`);
   L.push('Delivery: Free',`*TOTAL: ${fmt(t.total)}*`);
   if(f.notes)L.push('',`Notes: ${f.notes}`);
   return L.join('\n');}
