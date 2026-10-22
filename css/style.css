@@ -85,3 +85,5 @@ summary{font-weight:800;cursor:pointer;color:var(--g)}
 .ev-list{display:grid;grid-template-columns:1fr 1fr;gap:.4rem;padding:0;list-style:none;font-weight:700}
 .credits{background:none;box-shadow:none;color:#fff;max-width:900px;font-size:.8rem;text-align:left}.credits summary{color:#f7a21b}.credits a{color:#fff6e5}.credits ul{padding-left:1rem}
 @media(min-width:900px){.events-wrap{grid-template-columns:1fr 1fr}}
+.slogan{font-family:Georgia,serif;font-style:italic;font-weight:700;font-size:clamp(1.4rem,4.5vw,2.2rem);color:#F26A1B;margin:.1em 0 .4em;text-shadow:0 2px 8px #0007}
+.slogan.foot{font-size:1.3rem;text-shadow:none}
