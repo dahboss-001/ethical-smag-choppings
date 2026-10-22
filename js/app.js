@@ -15,7 +15,6 @@ $$('.areasInline').forEach(e=>e.textContent=C.deliveryAreas.join(', '));
 $('#areaList').innerHTML=C.deliveryAreas.map(a=>`<li>${a}</li>`).join('');
 $('#slotList').textContent=C.timeSlots.join(' · ');
 ['#heroWa','#contactWa','#waFloat','#waLink'].forEach(s=>$(s).href=wa('Hello ETHICAL SMAG CHOPPINGS, I would like to make an order.'));
-$$('.payBank').forEach(e=>e.textContent=C.paymentBank);$$('.payAcct').forEach(e=>e.textContent=C.paymentAccount);
 $$('.waDetails,.waDetailsBtn').forEach(e=>e.href=wa('Hello ETHICAL SMAG CHOPPINGS, I would like to book my spot and confirm an order.'));
 $('#waLink').textContent=C.whatsappDisplay;
 if(C.email){$('#emailRow').hidden=false;$('#emailLink').href='mailto:'+C.email;$('#emailLink').textContent=C.email;$('#emailBtn').hidden=false;}
@@ -75,7 +74,7 @@ function buildMsg(f){const t=calc(),L=[];
   if(t.ok)L.push(`Promo (${t.plates} plates): ${C.promoDiscountPercent}% off −${fmt(t.disc)} + ${C.promoExtra}`);
   L.push('Delivery: Free',`*TOTAL: ${fmt(t.total)}*`);
   if(f.notes)L.push('',`Notes: ${f.notes}`);
-  L.push('',`*Payment:* Bank transfer to ${C.paymentBank} – Acct ${C.paymentAccount}`,'⚠️ I will pay only after you confirm my order.');
+  L.push('',`*Payment:* Bank transfer — please send me payment details after confirming my order.`);
   return L.join('\n');}
 function readForm(){const fd=new FormData($('#checkout')),f=Object.fromEntries(fd.entries());
   if(!f.name.trim()||!f.phone.trim()||!f.area||!f.date||!f.slot){$('#formErr').textContent='Please fill in name, phone, area, Saturday and time slot.';return null;}

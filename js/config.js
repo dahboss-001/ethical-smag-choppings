@@ -9,8 +9,7 @@ const CONFIG = {
   whatsappDisplay: "0912 989 8128",
   email: "",                             // optional: add an email to enable "Order by email"
   isPlaceholder: false,
-  paymentBank: "OPay",
-  paymentAccount: "9129898128",   // no account name given
+  paymentNote: "Payment is by bank transfer. After placing your order, request payment details on WhatsApp.",
 
   currency: "₦",
   timezone: "Africa/Lagos",
