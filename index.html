@@ -21,7 +21,7 @@
 <div class="topbar">🍛 <b>Order 3+ plates and get a discount + a free extra!</b> <span class="sep">•</span> Book during the week • Delivered every Saturday</div>
 <header class="nav">
   <a href="#" class="brand"><img src="images/logo.svg" alt="ETHICAL SMAG CHOPPINGS logo" width="44" height="44"><span>ETHICAL SMAG<br><small>CHOPPINGS</small></span></a>
-  <nav id="navlinks"><a href="#menu">Menu</a><a href="#how">How it works</a><a href="#delivery">Delivery</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav>
+  <nav id="navlinks"><a href="#menu">Menu</a><a href="#how">How it works</a><a href="#delivery">Delivery</a><a href="#payment">Payment</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav>
   <button class="cart-btn" id="openCart" aria-label="Open cart">🛒 <span id="cartCount">0</span></button>
 </header>
 
@@ -61,9 +61,11 @@
   <div class="info-grid">
     <div class="card"><h3>🚚 Free delivery</h3><p>Delivery is <b>FREE</b> within these Awka areas:</p><ul class="areas" id="areaList"></ul><p class="muted">Nearby spots only — we don't deliver to far locations. Pickup is also available.</p></div>
     <div class="card"><h3>📅 Saturdays only</h3><p>We cook and deliver <b>every Saturday</b>. Book any day during the week.</p><p>Booking cutoff: <b>Saturday 8:00 AM</b> (Nigeria time). Orders after that go to the following Saturday.</p></div>
-    <div class="card"><h3>🕒 Opening hours</h3><p>Contact us for hours.</p><p>Saturday time slots: <span id="slotList"></span></p></div>
+    <div class="card"><h3>🕒 Opening hours</h3><p><a class="waDetails" target="_blank" rel="noopener">Details discussed on WhatsApp when you reach out</a></p><p>Saturday time slots: <span id="slotList"></span></p></div>
   </div>
 </section>
+
+<section id="payment" class="section"><h2>Payment</h2><div class="card pay-card"><p>💳 Bank transfer to <b><span class="payBank"></span></b> — Account number: <b class="payAcct"></b></p><div class="warn">⚠️ <b>Do NOT pay before confirming.</b> Contact us on WhatsApp first to book your spot and get your order confirmed, then make payment.</div><a class="btn primary waDetailsBtn" target="_blank" rel="noopener">Confirm on WhatsApp first</a></div></section>
 
 <section id="about" class="section alt">
   <h2>About us</h2>
@@ -76,14 +78,14 @@
   <details><summary>Where do you deliver?</summary><p>Free delivery within <span class="areasInline"></span> (and very close nearby spots). We don't deliver to far locations. Pickup is also available.</p></details>
   <details><summary>Is delivery free?</summary><p>Yes — delivery is free within our listed areas.</p></details>
   <details><summary>How does the promo work?</summary><p>Order <span class="promoMin"></span> or more plates (rice dishes, soups or specials — drinks don't count) and get <span class="promoPct"></span>% off your food plus a <span class="promoExtra"></span>. It's applied automatically in the cart.</p></details>
-  <details><summary>How do I pay?</summary><p>Payment details are shared when we confirm your order on WhatsApp.</p></details>
+  <details open><summary>How do I pay?</summary><p>💳 Bank transfer to <b><span class="payBank"></span></b> — Account number: <b class="payAcct"></b></p><div class="warn">⚠️ <b>Do NOT pay before confirming.</b> Contact us on WhatsApp first to book your spot and get your order confirmed, then make payment.</div></details><details><summary>What are your hours and pickup location?</summary><p><a class="waDetails" target="_blank" rel="noopener">Details discussed on WhatsApp when you reach out</a>.</p></details>
   <details><summary>Can I change or cancel my order?</summary><p>Yes, message us on WhatsApp before the Saturday 8:00 AM cutoff.</p></details>
 </section>
 
 <section id="contact" class="section alt">
   <h2>Contact</h2>
   <div class="contact-grid">
-    <div class="card"><p>📍 Awka, Anambra State, Nigeria</p><p>💬 WhatsApp: <a id="waLink" target="_blank" rel="noopener"></a></p><p id="emailRow" hidden>✉️ <a id="emailLink"></a></p><p>🕒 Contact us for hours</p><a class="btn primary" id="contactWa" target="_blank" rel="noopener">Message us on WhatsApp</a></div>
+    <div class="card"><p>📍 Awka, Anambra State, Nigeria</p><p>💬 WhatsApp: <a id="waLink" target="_blank" rel="noopener"></a></p><p id="emailRow" hidden>✉️ <a id="emailLink"></a></p><p>🕒 Hours &amp; pickup location: <a class="waDetails" target="_blank" rel="noopener">Details discussed on WhatsApp when you reach out</a></p><a class="btn primary" id="contactWa" target="_blank" rel="noopener">Message us on WhatsApp</a></div>
     <iframe class="map" title="Map of Awka, Anambra State" src="https://www.google.com/maps?q=Awka,+Anambra+State,+Nigeria&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
 </section>
@@ -112,7 +114,7 @@
     <label>Saturday<select name="date" id="dateSelect" required></select></label>
     <label>Time slot<select name="slot" id="slotSelect" required></select></label>
     <label>Notes<textarea name="notes" rows="2" placeholder="Spice level, swallow choice, etc."></textarea></label>
-    <div class="totals" id="totals2"></div>
+    <div class="totals" id="totals2"></div><div class="paybox"><p>💳 Bank transfer to <b><span class="payBank"></span></b> — Account number: <b class="payAcct"></b></p><div class="warn">⚠️ <b>Do NOT pay before confirming.</b> Contact us on WhatsApp first to book your spot and get your order confirmed, then make payment.</div></div>
     <p class="err" id="formErr"></p>
     <button class="btn primary full" type="submit">Send order on WhatsApp</button>
     <button class="btn ghost full" type="button" id="emailBtn" hidden>Or send by email</button>

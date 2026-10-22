@@ -9,6 +9,9 @@ const CONFIG = {
   whatsappDisplay: "0912 989 8128",
   email: "",                             // optional: add an email to enable "Order by email"
   isPlaceholder: false,
+  paymentBank: "OPay",
+  paymentAccount: "9129898128",   // no account name given
+
   currency: "₦",
   timezone: "Africa/Lagos",
   // Saturday-only service. Orders before cutoff count for that Saturday.
