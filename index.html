@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ETHICAL SMAG CHOPPINGS | Nigerian Food in Awka – Order on WhatsApp</title>
+<meta name="description" content="Authentic Nigerian dishes in Awka, Anambra State. Pre-order jollof, soups, swallow, nkwobi, isi ewu and more during the week — free delivery or pickup every Saturday.">
+<meta name="keywords" content="Awka food, Nigerian food Awka, jollof rice Awka, nkwobi, isi ewu, egusi, food delivery Awka, Unizik">
+<link rel="canonical" href="https://dahboss-001.github.io/ethical-smag-choppings/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ETHICAL SMAG CHOPPINGS – Authentic Nigerian Dishes in Awka">
+<meta property="og:description" content="Book during the week • Free delivery every Saturday in Awka. Order on WhatsApp.">
+<meta property="og:url" content="https://dahboss-001.github.io/ethical-smag-choppings/">
+<meta property="og:image" content="https://dahboss-001.github.io/ethical-smag-choppings/images/hero.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0f5132">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="topbar">🍛 <b>Order 3+ plates and get a discount + a free extra!</b> <span class="sep">•</span> Book during the week • Delivered every Saturday</div>
+<header class="nav">
+  <a href="#" class="brand"><img src="images/logo.svg" alt="ETHICAL SMAG CHOPPINGS logo" width="44" height="44"><span>ETHICAL SMAG<br><small>CHOPPINGS</small></span></a>
+  <nav id="navlinks"><a href="#menu">Menu</a><a href="#how">How it works</a><a href="#delivery">Delivery</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav>
+  <button class="cart-btn" id="openCart" aria-label="Open cart">🛒 <span id="cartCount">0</span></button>
+</header>
+
+<section class="hero">
+  <img class="hero-img" src="images/hero.webp" alt="Spread of Nigerian dishes: jollof rice, grilled chicken, egusi with pounded yam, dodo and suya" fetchpriority="high">
+  <div class="hero-inner">
+    <div class="badges"><span class="badge">📅 Book during the week • Delivered every Saturday</span><span class="badge green">🚚 Free delivery</span><span class="badge orange">🎁 3+ plates: <span class="promoPct"></span>% off + <span class="promoExtra"></span></span></div>
+    <h1>ETHICAL SMAG CHOPPINGS</h1>
+    <p class="tagline">Authentic Nigerian dishes, freshly cooked in Awka — jollof, native soups, nkwobi, isi ewu and more.</p>
+    <div class="hero-cta"><a href="#menu" class="btn primary">Order Now</a><a class="btn ghost" id="heroWa" target="_blank" rel="noopener">💬 Chat on WhatsApp</a></div>
+    <p class="next-sat">Next delivery Saturday: <b id="nextSat"></b></p>
+  </div>
+</section>
+
+<section id="menu" class="section">
+  <h2>Our Menu</h2>
+  <div class="promo-card">
+    <div class="promo-emoji">🎉</div>
+    <div><h3>Order 3+ plates and get a discount + a free extra!</h3>
+    <p>Get <b><span class="promoPct"></span>% off</b> plus a <b><span class="promoExtra"></span></b> when you order <span class="promoMin"></span> or more plates (rice dishes, soups or specials). Drinks don't count. Applied automatically in your cart.</p></div>
+  </div>
+  <div class="cat-tabs" id="catTabs"></div>
+  <div id="menuWrap"></div>
+</section>
+
+<section id="how" class="section alt">
+  <h2>How ordering works</h2>
+  <div class="steps">
+    <div class="step"><div class="num">1</div><h3>Pre-order during the week</h3><p>Pick your dishes and choose an upcoming Saturday and time slot.</p></div>
+    <div class="step"><div class="num">2</div><h3>Confirm on WhatsApp</h3><p>Your order summary opens in WhatsApp — send it and we confirm.</p></div>
+    <div class="step"><div class="num">3</div><h3>Enjoy on Saturday</h3><p>Free delivery to your area, or pick up — every Saturday.</p></div>
+  </div>
+</section>
+
+<section id="delivery" class="section">
+  <h2>Delivery info</h2>
+  <div class="info-grid">
+    <div class="card"><h3>🚚 Free delivery</h3><p>Delivery is <b>FREE</b> within these Awka areas:</p><ul class="areas" id="areaList"></ul><p class="muted">Nearby spots only — we don't deliver to far locations. Pickup is also available.</p></div>
+    <div class="card"><h3>📅 Saturdays only</h3><p>We cook and deliver <b>every Saturday</b>. Book any day during the week.</p><p>Booking cutoff: <b>Saturday 8:00 AM</b> (Nigeria time). Orders after that go to the following Saturday.</p></div>
+    <div class="card"><h3>🕒 Opening hours</h3><p>Contact us for hours.</p><p>Saturday time slots: <span id="slotList"></span></p></div>
+  </div>
+</section>
+
+<section id="about" class="section alt">
+  <h2>About us</h2>
+  <p class="lead">ETHICAL SMAG CHOPPINGS serves home-style Nigerian food in Awka, Anambra State. From smoky jollof and rich native soups to nkwobi, isi ewu and pepper soup, every order is cooked fresh for Saturday delivery or pickup. Book ahead, relax, and let us handle the cooking.</p>
+</section>
+
+<section id="faq" class="section">
+  <h2>FAQ</h2>
+  <details><summary>Which days do you deliver?</summary><p>Saturdays only. You can pre-order any day of the week; orders placed before Saturday 8:00 AM (Nigeria time) are for that same Saturday, after that they move to the next Saturday.</p></details>
+  <details><summary>Where do you deliver?</summary><p>Free delivery within <span class="areasInline"></span> (and very close nearby spots). We don't deliver to far locations. Pickup is also available.</p></details>
+  <details><summary>Is delivery free?</summary><p>Yes — delivery is free within our listed areas.</p></details>
+  <details><summary>How does the promo work?</summary><p>Order <span class="promoMin"></span> or more plates (rice dishes, soups or specials — drinks don't count) and get <span class="promoPct"></span>% off your food plus a <span class="promoExtra"></span>. It's applied automatically in the cart.</p></details>
+  <details><summary>How do I pay?</summary><p>Payment details are shared when we confirm your order on WhatsApp.</p></details>
+  <details><summary>Can I change or cancel my order?</summary><p>Yes, message us on WhatsApp before the Saturday 8:00 AM cutoff.</p></details>
+</section>
+
+<section id="contact" class="section alt">
+  <h2>Contact</h2>
+  <div class="contact-grid">
+    <div class="card"><p>📍 Awka, Anambra State, Nigeria</p><p>💬 WhatsApp: <a id="waLink" target="_blank" rel="noopener"></a></p><p id="emailRow" hidden>✉️ <a id="emailLink"></a></p><p>🕒 Contact us for hours</p><a class="btn primary" id="contactWa" target="_blank" rel="noopener">Message us on WhatsApp</a></div>
+    <iframe class="map" title="Map of Awka, Anambra State" src="https://www.google.com/maps?q=Awka,+Anambra+State,+Nigeria&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</section>
+
+<footer class="footer"><img src="images/logo.svg" alt="" width="36" height="36"><p>© <span id="year"></span> ETHICAL SMAG CHOPPINGS · Awka, Anambra State</p></footer>
+
+<a class="wa-float" id="waFloat" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 32 32" width="30" height="30"><path fill="#fff" d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6a10.6 10.6 0 0 1-5.4-1.5l-.4-.2-3.9 1 1-3.8-.2-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.7 3.7 0 0 0-1.1 2.7 6.4 6.4 0 0 0 1.3 3.4 14.7 14.7 0 0 0 5.7 5c2.1.9 2.9 1 4 .8a3.4 3.4 0 0 0 2.2-1.6 2.8 2.8 0 0 0 .2-1.6c-.1-.2-.3-.3-.6-.4z"/></svg></a>
+
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" aria-label="Cart">
+  <div class="drawer-head"><h2 id="drawerTitle">Your order</h2><button id="closeCart" aria-label="Close">✕</button></div>
+  <div id="cartView">
+    <div id="cartItems"></div>
+    <div id="promoNudge" class="nudge"></div>
+    <div class="totals" id="totals"></div>
+    <button class="btn primary full" id="toCheckout">Checkout</button>
+  </div>
+  <form id="checkout" hidden novalidate>
+    <label>Full name<input name="name" required autocomplete="name"></label>
+    <label>Phone number<input name="phone" type="tel" required autocomplete="tel" placeholder="e.g. 0803 000 0000"></label>
+    <fieldset class="seg"><legend>Delivery or pickup</legend>
+      <label><input type="radio" name="method" value="Delivery" checked> Delivery (free)</label>
+      <label><input type="radio" name="method" value="Pickup"> Pickup</label></fieldset>
+    <label>Area<select name="area" id="areaSelect" required></select></label>
+    <label id="addrWrap">Street / landmark (within the area)<input name="address" placeholder="e.g. near the junction, house colour"></label>
+    <label>Saturday<select name="date" id="dateSelect" required></select></label>
+    <label>Time slot<select name="slot" id="slotSelect" required></select></label>
+    <label>Notes<textarea name="notes" rows="2" placeholder="Spice level, swallow choice, etc."></textarea></label>
+    <div class="totals" id="totals2"></div>
+    <p class="err" id="formErr"></p>
+    <button class="btn primary full" type="submit">Send order on WhatsApp</button>
+    <button class="btn ghost full" type="button" id="emailBtn" hidden>Or send by email</button>
+    <button class="btn link full" type="button" id="backToCart">← Back to cart</button>
+  </form>
+</aside>
+<div class="toast" id="toast"></div>
+<script src="js/config.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
